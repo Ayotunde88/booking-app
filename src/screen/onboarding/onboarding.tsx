@@ -116,7 +116,8 @@ const styles = StyleSheet.create({
   },
   onboardingScreenbutton: {
     borderColor: 'none',
-    backgroundColor: '#2a6af5',
+    backgroundColor: '#575653',
+    // backgroundColor: '#2a6af5',
     color: '#fff',
     fontFamily: 'Poppins-SemiBold',
     // fontWeight:'bold',
@@ -125,7 +126,7 @@ const styles = StyleSheet.create({
     width: 320,
     height: 60,
     textAlign: 'center',
-    borderRadius: 5,
+    borderRadius: 10,
     marginTop: 25,
   }
 });

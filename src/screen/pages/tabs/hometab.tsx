@@ -3,7 +3,7 @@ import Geolocation, { GeoPosition } from 'react-native-geolocation-service';
 import { request, PERMISSIONS, RESULTS } from 'react-native-permissions';
 import { SearchBar } from '@rneui/themed';
 import { Text, Card, Button, Skeleton } from '@rneui/base';
-import { BottomSheet, ListItem} from '@rneui/themed';
+import { BottomSheet, ListItem } from '@rneui/themed';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import AllCategoryTabs from '../partials/toptab'
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -30,6 +30,7 @@ import testimage1 from '../../../images/testimage1.png';
 import testimage2 from '../../../images/testimage2.png';
 import testimage3 from '../../../images/testimage3.jpeg';
 import bell from '../../../images/bell.png';
+import hotelofm from '../../../images/hotelofm.jpeg';
 import HotelTab from '../partials/hoteltab';
 import HotelModal from '../partials/modals/hotel'
 // import {  } from 'react-native-elements';
@@ -99,10 +100,11 @@ const Hometab: React.FC<PropsWithChildren<HometabProps>> = ({ navigation }): Rea
               backgroundColor: 'transparent',
               borderTopWidth: 0,
               borderBottomWidth: 0,
+              margin:5,
             }}
             inputContainerStyle={{
               padding: 3,
-              backgroundColor: '#ebeae8',
+              backgroundColor: '#e6e5e3',
             }}
           />
         </View>
@@ -111,10 +113,10 @@ const Hometab: React.FC<PropsWithChildren<HometabProps>> = ({ navigation }): Rea
         </View>
         <View style={styles.resentSearchContainer}>
           <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-            <Pressable style={styles.resentSearch}><Text>London</Text></Pressable>
-            <Pressable style={styles.resentSearch}><Text>London</Text></Pressable>
-            <Pressable style={styles.resentSearch}><Text>London</Text></Pressable>
-            <Pressable style={styles.resentSearch}><Text>London</Text></Pressable>
+            <Pressable style={[styles.resentSearch]}><Text style={styles.recentSearchText}>London</Text></Pressable>
+            <Pressable style={styles.resentSearch}><Text style={styles.recentSearchText}>London</Text></Pressable>
+            <Pressable style={styles.resentSearch}><Text style={styles.recentSearchText}>London</Text></Pressable>
+            <Pressable style={styles.resentSearch}><Text style={styles.recentSearchText}>London</Text></Pressable>
           </ScrollView>
         </View>
         <View style={styles.view}>
@@ -153,41 +155,51 @@ const Hometab: React.FC<PropsWithChildren<HometabProps>> = ({ navigation }): Rea
           <ScrollView horizontal showsHorizontalScrollIndicator={false}>
             <Pressable>
 
-            <View style={styles.card}>
-              <ImageBackground source={testimage1} style={styles.image}>
-                <View style={styles.captionContainer}>
-                  <Text style={styles.caption}>Explore London</Text>
-                </View>
-              </ImageBackground>
-            </View>
+              <View style={styles.card}>
+                <ImageBackground source={testimage1} style={styles.image}>
+                  <View style={styles.captionContainer}>
+                    <Text style={styles.caption}>Explore London</Text>
+                  </View>
+                </ImageBackground>
+              </View>
             </Pressable>
             <Pressable>
-              
-            <View style={styles.card}>
-              <ImageBackground source={testimage2} style={styles.image}>
-                <View style={styles.captionContainer}>
-                  <Text style={styles.caption}>Explore Madrid</Text>
-                </View>
-              </ImageBackground>
-            </View>
+              <View style={styles.card}>
+                <ImageBackground source={testimage2} style={styles.image}>
+                  <View style={styles.captionContainer}>
+                    <Text style={styles.caption}>Explore Madrid</Text>
+                  </View>
+                </ImageBackground>
+              </View>
             </Pressable>
             <Pressable>
-              
-            <View style={styles.card}>
-              <ImageBackground source={testimage3} style={styles.image}>
-                <View style={styles.captionContainer}>
-                  <Text style={styles.caption}>Explore New York</Text>
-                </View>
-              </ImageBackground>
-            </View>
+
+              <View style={styles.card}>
+                <ImageBackground source={testimage3} style={styles.image}>
+                  <View style={styles.captionContainer}>
+                    <Text style={styles.caption}>Explore New York</Text>
+                  </View>
+                </ImageBackground>
+              </View>
             </Pressable>
           </ScrollView>
           <View>
             <Text style={styles.viewall}>View All <Icon name={'arrow-forward-outline'} size={20}></Icon></Text>
           </View>
+          <View>
+            <Text style={styles.header}>Best of the Month</Text>
+          </View>
+          <View style={styles.vendorofthemonthcard}>
+            <Image source={hotelofm} style={styles.vendorofthemonthimage} />
+            <View style={styles.vendorofthemonthcardBody}>
+              <Text style={styles.vendorofthemonthtitle}>Hotel Canada</Text>
+              <Text style={styles.vendorofthemonthtext}>Comfort is best</Text>
+            </View>
+          </View>
+          
         </View>
       </ScrollView>
-        {/* <View>
+      {/* <View>
           <AllCategoryTabs/>
         </View> */}
     </ScrollView>
@@ -197,8 +209,8 @@ const Hometab: React.FC<PropsWithChildren<HometabProps>> = ({ navigation }): Rea
 const styles = StyleSheet.create({
   appTitle: {
     // color: '#ffffff',
-    fontWeight:'700',
-    fontSize:25,
+    fontWeight: '700',
+    fontSize: 25,
   },
   containerAppTitle: {
     flexDirection: 'row',
@@ -213,29 +225,36 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'flex-end'
   },
-  notificationicon:{
-    
+  notificationicon: {
+
   },
   appTitleHeader: {
     // backgroundColor: '#2a6af5',
     paddingBottom: 15,
   },
-  resentSearchContainer:{
-    textAlign:'center',
-    margin:10,
+  resentSearchContainer: {
+    textAlign: 'center',
+    margin: 10,
   },
-  resentSearch:{
-    backgroundColor:'#e8e8e8',
-    borderColor:'#ababab',
-    borderWidth:0.2,
-    borderRadius:50,
-    padding:10,
+
+  resentSearch: {
+    backgroundColor: '#575653',
+    // backgroundColor: '#e8e8e8',
+    borderColor: '#ababab',
+    borderWidth: 0.2,
+    borderRadius: 50,
+    padding: 10,
     width: 100,
-    textAlign:'center',
-    alignItems:'center',
-    color:'#4d4c4a',
-    fontSize:14,
-    margin:5,
+    textAlign: 'center',
+    alignItems: 'center',
+    // color: '#4d4c4a',
+    color: '#fff',
+    fontSize: 14,
+    margin: 5,
+  },
+  recentSearchText:{
+    color:'#fff',
+    // backgroundColor: '#000',
   },
   safeArea: {
     flex: 1,
@@ -264,8 +283,8 @@ const styles = StyleSheet.create({
     marginTop: 50,
   },
   card: {
-    width: 150, 
-    height:250,
+    width: 150,
+    height: 250,
     marginTop: 15,
     marginRight: 10,
     borderRadius: 10,
@@ -326,18 +345,45 @@ const styles = StyleSheet.create({
   categoryText: {
     textAlign: 'center',
   },
-  viewall:{
-    color:'#706f6d',
+  viewall: {
+    color: '#706f6d',
     // borderColor:'#8a8884',
     // borderWidth:1,
-    padding:4,
-    width:100,
-    textAlign:'left',
-    borderRadius:5,
-    fontSize:15,
-    margin:0,
-    marginTop:10,
-  }
+    padding: 4,
+    width: 100,
+    textAlign: 'left',
+    borderRadius: 5,
+    fontSize: 15,
+    margin: 0,
+    marginTop: 10,
+  },
+  vendorofthemonthcard: {
+    borderRadius: 10,
+    overflow: 'hidden',
+    backgroundColor: '#fff',
+    elevation: 4, // For Android shadow
+    shadowColor: '#000', // For iOS shadow
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 2,
+    margin: 10,
+  },
+  vendorofthemonthimage: {
+    width: '100%',
+    height: 200,
+  },
+  vendorofthemonthcardBody: {
+    padding: 15,
+  },
+  vendorofthemonthtitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 5,
+  },
+  vendorofthemonthtext: {
+    fontSize: 14,
+    color: '#666',
+  },
 });
 
 export default Hometab;
