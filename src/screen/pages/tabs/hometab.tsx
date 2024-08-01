@@ -184,7 +184,7 @@ const Hometab: React.FC<PropsWithChildren<HometabProps>> = ({ navigation }): Rea
             </Pressable>
           </ScrollView>
           <View>
-            <Text style={styles.viewall}>View All <Icon name={'arrow-forward-outline'} size={20}></Icon></Text>
+            <Text style={styles.viewall}>View All Popular Place <Icon name={'arrow-forward-outline'} size={20}></Icon></Text>
           </View>
           <View>
             <Text style={styles.header}>Best of the Month</Text>
@@ -346,16 +346,18 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   viewall: {
-    color: '#706f6d',
     // borderColor:'#8a8884',
     // borderWidth:1,
-    padding: 4,
-    width: 100,
-    textAlign: 'left',
+    color: '#398761',
+    backgroundColor: '#c5edd7',
+    padding: 5,
+    width: 200,
+    textAlign: 'center',
     borderRadius: 5,
+    fontWeight:'700',
     fontSize: 15,
     margin: 0,
-    marginTop: 10,
+    marginTop: 15,
   },
   vendorofthemonthcard: {
     borderRadius: 10,
@@ -382,7 +384,13 @@ const styles = StyleSheet.create({
   },
   vendorofthemonthtext: {
     fontSize: 14,
-    color: '#666',
+    // color: '#666',
+    color: '#398761',
+    backgroundColor: '#c5edd7',
+    width:120,
+    borderRadius:5,
+    textAlign:'center',
+    padding:4,
   },
 });
 
