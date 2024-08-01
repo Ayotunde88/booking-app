@@ -104,7 +104,8 @@ const Hometab: React.FC<PropsWithChildren<HometabProps>> = ({ navigation }): Rea
             }}
             inputContainerStyle={{
               padding: 3,
-              backgroundColor: '#e6e5e3',
+              backgroundColor: '#e3e2e1',
+              borderColor:'#d1d0cf',
             }}
           />
         </View>

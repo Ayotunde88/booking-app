@@ -52,12 +52,12 @@ function App(): React.JSX.Element {
         <Stack.Navigator
           screenOptions={{
             gestureEnabled: true,
-            // gestureDirection: 'horizontal',
-            // transitionSpec: {
-            //   open: TransitionSpecs.TransitionIOSSpec,
-            //   close: TransitionSpecs.TransitionIOSSpec,
-            // },
-            // cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+            gestureDirection: 'horizontal',
+            transitionSpec: {
+              open: TransitionSpecs.TransitionIOSSpec,
+              close: TransitionSpecs.TransitionIOSSpec,
+            },
+            cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
           }}
           initialRouteName="Onboarding">
           <Stack.Screen name="Onboarding" component={OnboardingScreen} options={{ headerShown: false }} />
