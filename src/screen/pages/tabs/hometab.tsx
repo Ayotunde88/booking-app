@@ -348,8 +348,8 @@ const styles = StyleSheet.create({
   viewall: {
     // borderColor:'#8a8884',
     // borderWidth:1,
-    color: '#398761',
-    backgroundColor: '#c5edd7',
+    color: '#d47e33',
+    backgroundColor: '#fcdcca',
     padding: 5,
     width: 200,
     textAlign: 'center',
